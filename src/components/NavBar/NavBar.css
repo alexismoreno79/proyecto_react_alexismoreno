@@ -1,0 +1,12 @@
+/* Dentro de NavBar.js */
+.NavBar {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.Img {
+    height: 50px;
+    width: 100px;
+}
+
