@@ -1,7 +1,7 @@
 /* Dentro de NavBar.js */
 .NavBar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 

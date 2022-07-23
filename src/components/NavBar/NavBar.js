@@ -1,6 +1,7 @@
 // Dentro de NavBar.js
 import './NavBar.css'
 import Button from '../Button/Button'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
 
@@ -18,6 +19,7 @@ const NavBar = () => {
                     <Button color='blue'>Cañería desague PVC</Button>
                     <Button color='green'>Hierros</Button>
                 </div>
+                <CartWidget />
             </nav>
         </>    
     )
