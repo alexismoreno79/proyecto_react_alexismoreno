@@ -1,7 +1,7 @@
 // Dentro de NavBar.js
-import './NavBar.css'
-import Button from '../Button/Button'
-import CartWidget from '../CartWidget/CartWidget'
+import './NavBar.css';
+import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -9,15 +9,17 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className="Navbar">
+            <nav className="NavBar">
                 <div>
-                    <h1>Materiales Moreno</h1>
                     <img className="Img" src='images/logo.png' alt='Logo Materiales Moreno'/>
+                    <Link to='/'>
+                        Materiales Moreno
+                    </Link>
                 </div>
-                <div>
-                    <Button color='red'>Cañería agua fusión</Button>
-                    <Button color='blue'>Cañería desague PVC</Button>
-                    <Button color='green'>Hierros</Button>
+                <div className="Categories">
+                    <Link to='/category/caneriaAgua' className="Option" color='red'>Cañería agua fusión</Link>
+                    <Link to='/category/caneriaDesague' className="Option" color='blue'>Cañería desague PVC</Link>
+                    <Link to='/category/hierros' className="Option" color='green'>Hierros</Link>
                 </div>
                 <CartWidget />
             </nav>
