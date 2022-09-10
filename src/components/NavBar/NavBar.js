@@ -39,7 +39,7 @@ const NavBar = () => {
 
   return (
       <nav className="NavBar" >
-        <div>
+        <div className="Ecomerce">
             <img className="Img" src='images/logo.png' alt='Logo Materiales Moreno'/>
             <Link to='/'>
             <h3>Materiales Moreno</h3>

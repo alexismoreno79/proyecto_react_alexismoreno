@@ -1,33 +1,61 @@
-import './ItemCount.css'
-import { useState } from 'react'
+import './ItemDetail.css'
+import { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../../context/CartContext'
+import NotificationContext from '../../notification/Notification'
 
-const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
-   const [quantity, setQuantity] = useState(initial)
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+    const [quantityToAdd, setQuantityToAdd] = useState(0)
 
-   const increment = () => {
-       if(quantity < stock) {
-           setQuantity(quantity+1)
-       }
-   }
+    const { addItem, getProductQuantity } = useContext(CartContext)
+    const { setNotification } = useContext(NotificationContext)
 
-   const decrement = () => {
-       if(quantity > 1) {
-           setQuantity(quantity - 1)
-       }     
-   }
+    const handleOnAdd = (quantity) => {
+        setQuantityToAdd(quantity)
 
-   return(
-       <div className='Counter'>          
-            <div className='Controls'>
-                <button className="Button" onClick={decrement}>-</button>
-                <h4 className='Number'>{quantity}</h4>
-                <button className="Button" onClick={increment}>+</button>
-            </div>
-            <div>
-                <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
-            </div>
-       </div>
-   )
+        const productToAdd = {
+            id, name, price, quantity
+        }
 
+        addItem(productToAdd)
+        setNotification('success', `Se agregaron ${quantity} ${name}`)
+    }
+
+    const productQuantity = getProductQuantity(id)
+
+    return (
+        <article className="CardItem">
+            <header className="Header">
+                <h2 className="ItemHeader">
+                    {name}
+                </h2>
+            </header>
+            <picture>
+                <img src={img} alt={name} className="ItemImg"/>
+            </picture>
+            <section>
+                <p className="Info">
+                    Categoria: {category}
+                </p>
+                <p className="Info">
+                    Descripción: {description}
+                </p>
+                <p className="Info">
+                    Precio: {price}
+                </p>
+            </section>           
+            <footer className='ItemFooter'>
+                {
+                    quantityToAdd === 0 ? (
+                        <ItemCount onAdd={handleOnAdd} stock={stock} initial={productQuantity}/>
+                    ) : (
+                        <Link to='/cart'>Finalizar compra</Link>
+                    )
+                }
+            </footer>
+        </article>
+    )
 }
-export default ItemCount
+
+export default ItemDetail
