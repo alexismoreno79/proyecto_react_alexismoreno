@@ -4,7 +4,7 @@ const products = [
         name: 'Caño agua fusión',
         price: 1500,
         category: 'caneriaAgua',
-        img: 'images/imgProduct/agua03.png',
+        img: '/images/imgProduct/agua03.png',
         stock: 10,
         description: 'Caño agua Multicapa fusión'
     },
@@ -12,7 +12,7 @@ const products = [
         name: 'Codo agua fusión',
         price: 250,
         category: 'caneriaAgua',
-        img: 'images/imgProduct/agua08.png',
+        img: '/images/imgProduct/agua08.png',
         stock: 30,
         description: 'Codo agua 90° fusión HH'
     },
@@ -20,7 +20,7 @@ const products = [
         name: 'Caño desague JE',
         price: 3600,
         category: 'caneriaDesague',
-        img: 'images/imgProduct/desague26.png',
+        img: '/images/imgProduct/desague26.png',
         stock: 12,
         description: 'Tubo desague Junta Elástica'
     },
@@ -28,7 +28,7 @@ const products = [
         name: 'Codo desague 90° MH',
         price: 450,
         category: 'caneriaDesague',
-        img: 'images/imgProduct/desague07.png',
+        img: '/images/imgProduct/desague07.png',
         stock: 20,
         description: 'Codo desague 90° MH Junta Elástica'
     },
@@ -36,7 +36,7 @@ const products = [
         name: 'Hierro nervurado',
         price: 1270,
         category: 'hierros',
-        img: 'images/imgProduct/hierro01.png',
+        img: '/images/imgProduct/hierro01.png',
         stock: 48,
         description: 'Hierros nervurados'
     },
@@ -44,7 +44,7 @@ const products = [
         name: 'Malla de hierro 15x15 2m x 3m',
         price: 8600,
         category: 'hierros',
-        img: 'images/imgProduct/hierro02.png',
+        img: '/images/imgProduct/hierro02.png',
         stock: 18,
         description: 'Malla de hierro 15x15 2m x 3m'
     }

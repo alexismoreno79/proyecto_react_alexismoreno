@@ -1,12 +1,12 @@
 // Dentro de ItemList.css
 import './ItemList.css'
-import Item from "../Item/Item"
+import Item from '../Item/Item'
 
-const ItemList = ({products}) => {
-    return (
-        <ul className="ItemList">
-            {products.map(prod => <Item key={prod.id} product={prod}/>)}
-        </ul>
+const ItemList = ({products }) => {
+    return(
+        <div className='ListGroup' onClick={() => console.log('hice click en itemlist')}>
+            {products.map(prod => <Item key={prod.id} {...prod} />)}
+        </div>    
     )
 }
 

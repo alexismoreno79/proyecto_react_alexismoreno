@@ -4,6 +4,8 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import MercadoLibre from './components/MercadoLibre/MercadoLibre';
+// import Animation from './components/Animation/Animation';
 
 function App() {
   // const handleOnAdd = (quantity) => {
@@ -21,6 +23,8 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <Counter stock={10} onAdd={handleOnAdd} /> */}
+      {/* <MercadoLibre /> */}
+      {/* <Animation /> */}
     </div>
   );
 }
